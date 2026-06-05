@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | EventHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-ticket-alt"></i> EventHub
+        </div>
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <section class="checkout-container">
+        <div class="checkout-wrapper">
+            <div class="checkout-header">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Secure Checkout</h1>
+                <p>Review your booking details and confirm</p>
+            </div>
+
+            <div id="checkoutDetails" class="checkout-details"></div>
+
+            <div class="payment-methods">
+                <h3>Select Payment Method</h3>
+                <div class="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card" checked>
+                        <i class="fab fa-cc-visa"></i> Credit/Debit Card
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="upi">
+                        <i class="fas fa-mobile-alt"></i> UPI
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="netbanking">
+                        <i class="fas fa-university"></i> Net Banking
+                    </label>
+                </div>
+            </div>
+
+            <button id="confirmBtn" class="btn btn-primary btn-block">
+                <i class="fas fa-check-circle"></i> Confirm & Pay
+            </button>
+        </div>
+    </section>
+
+    <script src="js/toast.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

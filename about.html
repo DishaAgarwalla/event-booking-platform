@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>About Us | EventHub - Your Premier Event Booking Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional premium styles for About page */
+        .about-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 8%;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mission Vision Section */
+        .mv-section {
+            padding: 80px 8%;
+            background: var(--light);
+        }
+        
+        body.dark-mode .mv-section {
+            background: #0f172a;
+        }
+        
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .mv-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        body.dark-mode .mv-card {
+            background: #1e293b;
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.15);
+        }
+        
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .mv-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .mv-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .mv-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+        
+        /* Stats Counter Section */
+        .stats-counter {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 70px 8%;
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .stat-counter-item {
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Story Section */
+        .story-section {
+            padding: 80px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .story-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .story-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .story-image {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .story-image i {
+            font-size: 8rem;
+            color: white;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 80px 8%;
+            background: var(--light);
+        }
+        
+        body.dark-mode .values-section {
+            background: #0f172a;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        body.dark-mode .value-card {
+            background: #1e293b;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 99, 255, 0.15);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .value-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .value-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .value-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 80px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        body.dark-mode .team-card {
+            background: #1e293b;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .team-image {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 30px;
+        }
+        
+        .team-image i {
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .team-card h4 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .team-card p {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .team-social {
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .team-social a {
+            color: var(--gray);
+            transition: 0.3s;
+        }
+        
+        .team-social a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 70px 8%;
+            text-align: center;
+            color: white;
+        }
+        
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .about-cta p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .about-cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .about-cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .values-grid, .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            .mv-grid, .story-grid, .values-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-ticket-alt"></i> EventHub
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>We're on a <span style="color: #ffd89b;">Mission</span> to Transform Events</h1>
+        <p>EventHub is India's fastest-growing event discovery and booking platform, connecting millions of people with unforgettable experiences.</p>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mv-section">
+        <div class="mv-grid">
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To democratize access to amazing events and experiences, making it effortless for anyone to discover, book, and create lasting memories.</p>
+            </div>
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To become the world's most trusted event marketplace, empowering event creators and delighting attendees across every city.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-counter">
+        <div class="stats-grid">
+            <div class="stat-counter-item">
+                <span class="stat-number" id="stat1">500+</span>
+                <span class="stat-label">Events Hosted</span>
+            </div>
+            <div class="stat-counter-item">
+                <span class="stat-number" id="stat2">50K+</span>
+                <span class="stat-label">Happy Attendees</span>
+            </div>
+            <div class="stat-counter-item">
+                <span class="stat-number" id="stat3">100+</span>
+                <span class="stat-label">Expert Speakers</span>
+            </div>
+            <div class="stat-counter-item">
+                <span class="stat-number" id="stat4">10+</span>
+                <span class="stat-label">Cities Covered</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story-section">
+        <div class="story-grid">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>Founded in 2026, EventHub was born from a simple observation: great events were happening everywhere, but discovering them was a challenge. We set out to change that.</p>
+                <p>What started as a small team of 5 passionate event enthusiasts in Bhubaneswar has now grown into a thriving platform serving thousands of users across India. We've partnered with over 500 event organizers and hosted 500+ successful events.</p>
+                <p>Today, EventHub stands as a testament to our belief that every moment deserves to be celebrated, and every experience should be unforgettable.</p>
+            </div>
+            <div class="story-image">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="section-title">
+            <h2>Our Core <span class="gradient-text">Values</span></h2>
+            <p>The principles that guide everything we do at EventHub</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h4>Customer First</h4>
+                <p>We prioritize our users' needs and work tirelessly to provide the best experience possible.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Trust & Security</h4>
+                <p>Your data and transactions are always secure with state-of-the-art protection.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h4>Innovation</h4>
+                <p>We constantly evolve and bring new features to enhance your event booking journey.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4>Community</h4>
+                <p>Building a vibrant community of event lovers and creators across India.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team -->
+    <section class="team-section">
+        <div class="section-title">
+            <h2>Meet Our <span class="gradient-text">Leadership</span></h2>
+            <p>The passionate people behind EventHub's success</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-image">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h4>Rahul Sharma</h4>
+                <p>Founder & CEO</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h4>Priya Patel</h4>
+                <p>Head of Operations</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h4>Amit Kumar</h4>
+                <p>Chief Technology Officer</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-image">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h4>Neha Gupta</h4>
+                <p>Head of Marketing</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="about-cta">
+        <h2>Ready to Create Unforgettable Memories?</h2>
+        <p>Join thousands of happy attendees who discovered amazing events through EventHub</p>
+        <a href="events.html" class="btn">Explore Events <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-ticket-alt"></i> EventHub</h3>
+                <p>Your premier platform for discovering and booking amazing events. Seamless booking, secure payments, unforgettable experiences.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> support@eventhub.com</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EventHub. All Rights Reserved. | Made with <i class="fas fa-heart"></i> for event lovers</p>
+        </div>
+    </footer>
+
+    <script src="js/toast.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Animated counter for stats
+        function animateCounter(elementId, targetValue) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            let currentValue = 0;
+            const duration = 2000;
+            const increment = targetValue / (duration / 16);
+            
+            const updateCounter = () => {
+                currentValue += increment;
+                if (currentValue < targetValue) {
+                    element.textContent = Math.floor(currentValue) + (targetValue > 1000 ? '+' : '+');
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = targetValue + (targetValue > 1000 ? '+' : '+');
+                }
+            };
+            
+            updateCounter();
+        }
+        
+        // Trigger counters when in view
+        const observerOptions = {
+            threshold: 0.3
+        };
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('stat1', 500);
+                    animateCounter('stat2', 50000);
+                    animateCounter('stat3', 100);
+                    animateCounter('stat4', 10);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        const statsSection = document.querySelector('.stats-counter');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Animation on scroll for cards
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        document.querySelectorAll('.mv-card, .value-card, .team-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            fadeObserver.observe(el);
+        });
+    </script>
+</body>
+</html>

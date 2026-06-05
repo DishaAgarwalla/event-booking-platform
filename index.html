@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>EventHub | Discover & Book Amazing Events</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-ticket-alt"></i> EventHub
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">✨ Your Journey Begins Here</span>
+            <h1>Discover Amazing <span class="gradient-text">Events</span> Near You</h1>
+            <p>Book tickets for concerts, workshops, sports events, networking meetups and festivals. Seamless booking, secure checkout, and unforgettable experiences.</p>
+            <div class="hero-buttons">
+                <a href="events.html" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Explore Events
+                </a>
+                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-play"></i> How It Works
+                </a>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <h3>500+</h3>
+                    <p>Events Hosted</p>
+                </div>
+                <div class="stat">
+                    <h3>50K+</h3>
+                    <p>Happy Attendees</p>
+                </div>
+                <div class="stat">
+                    <h3>100+</h3>
+                    <p>Expert Speakers</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero.jpg" alt="Event Celebration">
+            <div class="floating-card card-1">
+                <i class="fas fa-music"></i>
+                <span>Live Concert</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-laptop-code"></i>
+                <span>Tech Workshop</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="section-header">
+            <h2>Browse by <span class="gradient-text">Category</span></h2>
+            <p>Find events that match your interests</p>
+        </div>
+        <div class="category-container">
+            <div class="category-card">
+                <i class="fas fa-microphone-alt"></i>
+                <h3>Music</h3>
+                <p>12 events</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Technology</h3>
+                <p>8 events</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Business</h3>
+                <p>6 events</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-futbol"></i>
+                <h3>Sports</h3>
+                <p>5 events</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Food</h3>
+                <p>4 events</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-events">
+        <div class="section-header">
+            <h2>🔥 Featured <span class="gradient-text">Events</span></h2>
+            <p>Most popular events this month</p>
+        </div>
+        <div class="event-container" id="featuredContainer">
+            <!-- Featured events loaded via JS -->
+        </div>
+        <div class="view-all">
+            <a href="events.html" class="btn btn-outline">View All Events <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Create Unforgettable Memories?</h2>
+            <p>Join thousands of happy attendees who discovered amazing events through EventHub</p>
+            <a href="events.html" class="btn btn-primary">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-ticket-alt"></i> EventHub</h3>
+                <p>Your premier platform for discovering and booking amazing events. Seamless booking, secure payments, unforgettable experiences.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> support@eventhub.com</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EventHub. All Rights Reserved. | Made with <i class="fas fa-heart"></i> for event lovers</p>
+        </div>
+    </footer>
+
+    <script src="js/toast.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

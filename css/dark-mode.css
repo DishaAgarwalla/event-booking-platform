@@ -1,0 +1,92 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    --dark: #f8fafc;
+    --light: #1e293b;
+    --gray: #94a3b8;
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .category-card,
+body.dark-mode .event-card,
+body.dark-mode .details-card,
+body.dark-mode .booking,
+body.dark-mode .checkout-wrapper,
+body.dark-mode .confirmation-card {
+    background: #1e293b;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .navbar {
+    background: #0f172a;
+    border-bottom: 1px solid #334155;
+}
+
+body.dark-mode .nav-links a {
+    color: #cbd5e1;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: var(--primary);
+}
+
+body.dark-mode .category-card {
+    background: #1e293b;
+}
+
+body.dark-mode .search-box,
+body.dark-mode .filter-select,
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+    background: #1e293b;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+body.dark-mode .search-box input {
+    background: transparent;
+    color: #f1f5f9;
+}
+
+body.dark-mode .price-breakdown,
+body.dark-mode .checkout-details,
+body.dark-mode .event-summary,
+body.dark-mode .booking-summary {
+    background: #0f172a;
+}
+
+body.dark-mode .payment-option {
+    border-color: #475569;
+}
+
+body.dark-mode .floating-card {
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+body.dark-mode footer {
+    background: #020617;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: var(--light);
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
