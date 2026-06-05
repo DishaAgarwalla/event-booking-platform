@@ -5,14 +5,17 @@ A modern, fully responsive event booking platform that allows users to discover,
 ## 📱 Features
 
 ### Core Features
+
 | Feature | Description |
-|---------|-------------|
+|----------|-------------|
 | 🔍 **Event Discovery** | Search, filter, and sort events by category, price, and date |
-| 🎫 **Ticket Booking** | Multiple ticket types (Regular, VIP, VVIP) |
-| 💳 **Secure Checkout** | Simulated payment gateway with multiple options |
-| 📧 **Booking Confirmation** | Download tickets as text files |
-| 🌙 **Dark Mode** | Toggle between light and dark themes |
-| 📱 **Fully Responsive** | Works on all devices (mobile, tablet, desktop) |
+| 🎫 **Ticket Booking** | Book multiple ticket types (Regular, VIP, and VVIP) |
+| 💳 **Secure Checkout** | Simulated payment gateway with multiple payment options |
+| 📧 **Booking Confirmation** | Download booking tickets as text files |
+| 🌙 **Dark Mode** | Switch between light and dark themes |
+| 📱 **Fully Responsive** | Optimized for mobile, tablet, and desktop devices |
+
+---
 
 ## 🛠️ Technologies Used
 
@@ -23,29 +26,53 @@ A modern, fully responsive event booking platform that allows users to discover,
   <img src="https://img.shields.io/badge/Font%20Awesome-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white" alt="Font Awesome">
 </div>
 
-- **HTML5** - Semantic markup for better SEO and accessibility
-- **CSS3** - Custom styling with CSS variables, gradients, and animations
-- **JavaScript (ES6)** - Dynamic functionality, localStorage, and DOM manipulation
-- **Font Awesome 6** - Professional icons throughout the platform
-- **LocalStorage** - Persistent data storage for bookings and preferences
+### Technologies
 
+- **HTML5** – Semantic markup for better accessibility and SEO.
+- **CSS3** – Modern styling using CSS variables, gradients, animations, and responsive layouts.
+- **JavaScript (ES6)** – Dynamic functionality, DOM manipulation, and client-side logic.
+- **Font Awesome 6** – Professional icons for an enhanced user interface.
+- **LocalStorage** – Persistent storage for user preferences and booking details.
 
-### Installation
+---
 
-1. **Clone the repository**
+## 🚀 Installation
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/DishaAgarwalla/event-booking-platform.git
-issue
+```
 
-👨‍💻 Author
-Disha Agarwalla
+### 2. Navigate to the Project Folder
 
-GitHub: @DishaAgarwalla
+```bash
+cd event-booking-platform
+```
 
-📄 License
-This project is created for educational purposes as part of an internship submission.
+### 3. Open the Project
 
-⭐ Show Your Support
-If you found this project helpful, please give it a ⭐ on GitHub!
+Simply open the `index.html` file in your browser, or use the VS Code Live Server extension.
 
-Made with ❤️ for event lovers
+---
+---
+
+## 👨‍💻 Author
+
+**Disha Agarwalla**
+
+- GitHub: [@DishaAgarwalla](https://github.com/DishaAgarwalla)
+
+---
+
+## 📄 License
+
+This project was developed for educational and learning purposes as part of an internship project submission.
+
+---
+
+## ⭐ Show Your Support
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
+
+**Made with ❤️ for event enthusiasts and learners.**
